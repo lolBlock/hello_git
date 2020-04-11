@@ -2,3 +2,13 @@
 02 版本1
 03 版本2
 04 版本3
+05 版本4 release 
+
+git log  # 该命令显示从最近到最远的提交日志
+git log --pretty=oneline  # 如果嫌输出信息太多，看得眼花缭乱的，可以试试
+
+git reset --hard commitID  # 根据commitID来回退版本
+git reset --hard head~1  # 向前回退n个版本,n等于1时可省略
+
+git log  # 回到过去之后用此命令已经看不到未来的版本3的commitID
+git reflog  # 想回到未来可以用此命令查询历史输入和对应的commitID
