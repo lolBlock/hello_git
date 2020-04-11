@@ -11,8 +11,8 @@ pwd       # 显示当前目录
 git init  # 当前目录下多了一个.git的目录，这个目录是git来跟踪管理版本库的
 
 # 往仓库添加文件
-git add 01_git简介.txt
-git commit -m "可以多次增加文件,一次commit会将他们都提交"
+git add 01_git简介.txt  # 把文件修改添加到暂存区
+git commit -m "可以多次增加文件,一次commit"  # 把暂存区的所有内容提交到当前分支
 
 使用Windows的童鞋要特别注意：
 千万不要使用Windows自带的记事本编辑任何文本文件。原因是Microsoft的记事本使用了在每个文件开头添加了0xefbbbf（十六进制）的字符，你会遇到很多不可思议的问题，比如，网页第一行可能会显示一个“?”，明明正确的程序一编译就报语法错误，等等，都是由记事本的弱智行为带来的。建议你下载sublime(默认使用UTF-8编码)或Notepad++代替记事本，不但功能强大，而且免费！记得把Notepad++的默认编码设置为UTF-8 without BOM即可.
