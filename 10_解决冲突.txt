@@ -17,4 +17,6 @@ test line: 123
 文件存在冲突，必须手动解决冲突后再提交。git status也可以告诉我们冲突的文件.
 打开冲突文件,我们会发现Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容，修改后保存,再执行
 git add.
-git commit -m "解决冲突"
+git commit -m "解决冲突"  # 此时feature分支的内容不变
+git branch -d feature
+git push origin master
