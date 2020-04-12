@@ -1,4 +1,4 @@
-git merge --no-ff -m "merge with no-ff" dev
+git merge --no-ff dev -m "merge with no-ff"
 
 合并dev分支,--no-ff表示禁用Fast forward
 因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去.
