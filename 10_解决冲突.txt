@@ -11,7 +11,7 @@ git add.
 git commit -m "在master分支修改10_解决冲突.txt的test line"
 git merge feature
 
-test line: 1
+test line: 2
 
 这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突.
 文件存在冲突，必须手动解决冲突后再提交。git status也可以告诉我们冲突的文件.
