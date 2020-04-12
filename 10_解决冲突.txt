@@ -1,0 +1,18 @@
+增加本txt
+git add .
+git commit -m "增加10_解决冲突.txt"
+git switch -c feature
+修改本txt 的 test line
+git add .
+git commit -m "在feature分支修改10_解决冲突.txt的test line"
+git switch master
+修改本txt 的 test line,且修改与前文不一致
+git add.
+git commit -m "在master分支修改10_解决冲突.txt的test line"
+git merge feature
+
+test line: 1
+
+这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突.
+文件存在冲突，必须手动解决冲突后再提交。git status也可以告诉我们冲突的文件.
+Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容，我们修改后保存.
