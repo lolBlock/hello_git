@@ -5,7 +5,7 @@ Git还提供了一个stash功能，可以把当前工作现场“储藏”起来
 假设现在在dev分支干活:
 
 git status  # 干活到一半
-git stash   # 暂存工作区,可以多次stash
+git stash "save message"  # 暂存工作区,可以多次stash
 git status  # 工作区变干净了
 git switch master
 git switch -c issue-101
@@ -18,11 +18,11 @@ git switch -c issue-101
 git status  # 工作区是干净的
 git stash list  恢复的时候，先用git stash list查看
 
-git stash apply stash{n}  # 恢复暂存点n,恢复后,stash{n}内容并不删除
-git stash drop stash{n}   # 可用来删除暂存点n
+git stash apply stash@{n}  # 恢复暂存点n,恢复后,stash{n}内容并不删除
+git stash drop stash@{n}   # 可用来删除暂存点n
 
-git stash pop stash{n}    # 等效于apply+drop
-
+git stash pop stash@{n}    # 等效于apply+drop
+git stash clear           # 删除所有的stash
 ***********************
 在master分支上修复了issue-101后，我们要想一想，dev分支是早期从master分支分出来的，所以，这个bug其实在当前dev分支上也存在。
 
