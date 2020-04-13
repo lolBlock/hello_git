@@ -1,3 +1,24 @@
+git pull的默认行为是git fetch + git merge,
+git pull --rebase则是git fetch + git rebase.
+从目的来说，两者没差别，运行之后， 你能获得一样的code base。
+但从版本管理角度，这两者有各自的使用意义。
+git merge:简单来说，它把两条不同分支历史的所有提交合并成一条线，并在“末端”打个结，即生成一次合并提交。最后形成一条单一的提交线。
+git rebase:它相当于把分叉的两条历史提交线中的一条(eg.个人branch)挑选出来，在另一条提交线(eg.mainline)上提交。最后也形成一条单一的提交线。
+对比来看，git merge多了一次提交--“合并提交”。git rebase则没有。不过，git merge保存了两条线的历史。而git rebase则会破坏历史。
+因为每一次rebase, 提交id会变化(因为父提交变了，而父提交Id是用来生成提交id的内容之一）。
+那谁好谁坏呢？没有绝对答案。得看使用者的角色。举个例子。
+git的使用者中，典型的是Linux内核社区。 他们采用的是一种叫司令官与副官工作流(dictator and lieutenat workflow)。
+在这种模式中, 有若干个管理员, 分别负责项目中的特定部分，是为副官(lieutenant); 
+所有这些管理员头上还有一位负责统筹的总管理员，是为司令官(dictator)。
+司令官维护的版本库用于提供给所有项目协作者(不仅仅是副官, 还可以包括来自全球的"士兵"), 以供他们拉取集成的项目代码。
+Linus本人就是上述中的司令官了，每次他从其他子系统维护者那拉代码时，用的是git merge  or git merge--no-ff
+原因是，git merge生成一次合并提交，这就是一个明显的标志，告诉其他人，这次从某人合并来了什么代码，为什么要合并这些代码。等等。他不能使用git rebase, 原因是这样会改变历史。比如某一次在某子系统维护者处的ID是ABC, 他希望进了Linus代码库后还是这个ID，这样他在邮件或其他地方可以引用这个ID，不用担心变化。
+但是，如果使用git rebase, 这个提交ID是会变的，这样他引用的ID就没用了。
+作为个人开发者，一直follow着Linus的版本库, 叫mainline，建议把你的自己的提交rebase到mainline上，即始终保持你自己的代码在mainline之上。
+不推荐使用git merge,因为你的版本库是当作mainline镜像，你一merge就变成跟mainline不同了，下次再更新代码可能会冲突。
+
+***************
+
 rebase通常是发生在自己的个人branch上的。它的基础就是现有的主branch。这样做的好处就是保证每个人的代码都可以运行在当前最新的主branch的代码上。
 
 github默认用: git merge --no-ff
