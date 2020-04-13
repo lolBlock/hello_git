@@ -10,7 +10,7 @@ git status  # 工作区变干净了
 git switch master
 git switch -c issue-101
 
-修复bug:
+修复bug:bug已修复
 切回master
 删除issue-101
 
