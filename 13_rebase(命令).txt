@@ -1,0 +1,14 @@
+rebase通常是发生在自己的个人branch上的。它的基础就是现有的主branch。这样做的好处就是保证每个人的代码都可以运行在当前最新的主branch的代码上。
+
+github默认用: git merge --no-ff
+感觉CI_2推到CI_1用的也是这个
+
+CI全名Continuous Integration，啥意思？就是我们经常听到的持续集成概念。
+当开发每天会提交多次代码到主干上，会做一些重复性的动作时，就可以用持续集成环境来操作。
+有集成了，就肯定少不了它的好基友，没错就是CD。
+CD全名是Continuous Deployment，是持续部署。
+CD还有个小号，交持续交付，英文全称是Continuous delivery，缩写也是CD。
+
+CI/CD优点是，重复的工作用自动化来代替、减少时间成本、版本发布时间减短了。
+
+现在很多公司都有做持续集成，Jenkins就是一个持续集成的工具，开源的，基于 JAVA语言的。
