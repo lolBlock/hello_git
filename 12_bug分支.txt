@@ -1,0 +1,33 @@
+当你接到一个修复一个代号101的bug的任务，且必须在两个小时内修复;
+很自然地，你想创建一个分支issue-101来修复它，但是工作只进行到一半，还没法提交，预计完成还需1天时间.
+Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作.
+
+假设现在在dev分支干活:
+
+git status  # 干活到一半
+git stash   # 暂存工作区,可以多次stash
+git status  # 工作区变干净了
+git switch master
+git switch -c issue-101
+
+修复bug:
+切回master
+删除issue-101
+
+现在，是时候接着回到dev分支干活了！
+git status  # 工作区是干净的
+git stash list  恢复的时候，先用git stash list查看
+
+git stash apply stash{n}  # 恢复暂存点n,恢复后,stash{n}内容并不删除
+git stash drop stash{n}   # 可用来删除暂存点n
+
+git stash pop stash{n}    # 等效于apply+drop
+
+***********************
+在master分支上修复了issue-101后，我们要想一想，dev分支是早期从master分支分出来的，所以，这个bug其实在当前dev分支上也存在。
+
+在master分支上修复的bug，想要合并到当前dev分支，可以用git cherry-pick <commit>命令，把bug提交的修改“复制”到当前分支，避免重复劳动。
+
+同理,修复bug可以:
+先暂存dev现场 -> 在dev进行bug修复 -> 切回master -> cherry-pick <commit>
+************************
