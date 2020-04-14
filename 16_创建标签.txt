@@ -1,0 +1,8 @@
+命令git tag <tagname> <commitID>  用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+命令git tag -a <tagname> -m "blablabla..." <commitID> 可以指定标签信息；
+
+命令git tag 可以查看所有标签
+命令git show <tagname> 可以查看对应标签信息
+
+注意: 标签不是按时间顺序列出，而是按字母排序的。
+注意: 标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签.
