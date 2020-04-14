@@ -1,0 +1,30 @@
+在GitHub上，可以任意Fork开源仓库；
+自己拥有Fork后的仓库的读写权限；
+一定要用自己的账号clone仓库，这样你才能推送修改;
+可以推送pull request给官方仓库来贡献代码.
+
+┌─ GitHub ────────────────────────────────────┐
+│                                             │
+│ ┌─────────────────┐     ┌─────────────────┐ │
+│ │ twbs/bootstrap  │────>│  my/bootstrap   │ │
+│ └─────────────────┘     └─────────────────┘ │
+│                                  ▲          │
+└──────────────────────────────────┼──────────┘
+                                   ▼
+                          ┌─────────────────┐
+                          │ local/bootstrap │
+                          └─────────────────┘
+
+1HEHE10003121(https://www.liaoxuefeng.com/user/1313132496551969)
+首先，有3个仓库；
+远程 原作者的仓库：【twbs/bootstrap】
+远程 自己Fork出来的库：【my/bootstrap】
+本地：【local/bootstrap】
+
+当我在【local/bootstrap】完成了开发工作，之后的工作流是什么样子的呢？
+
+1. 把远程原作者的仓库【twbs/bootstrap】拉到本地，git pull --rebase
+2. 此时【local/bootstrap】与远程原作者的仓库【twbs/bootstrap】同步完成
+3. 在本地使用git push origin推送到自己Fork出来的库【my/bootstrap】
+4. 此时【my/bootstrap】与【twbs/bootstrap】同步完成
+5. 给原作者发送PullRequest的消息
