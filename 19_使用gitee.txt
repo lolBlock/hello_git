@@ -1,0 +1,18 @@
+git remote -v  # 查看远程库信息
+origin  git@code.aliyun.com:yesongji/hello_git.git (fetch)  # 有fetch权限
+origin  git@code.aliyun.com:yesongji/hello_git.git (push)   # 有push权限
+如上,本地库已经关联了名为origin的远程库，并且该远程库指向git@code.aliyun.com:yesongji/hello_git.git
+
+删除已关联的名为origin的远程库:
+git remote rm origin
+
+如果要关联多个远程库:
+git remote add <远程库名> <远程库指向>
+
+多个远程库推送代码:
+git push <远程库名> <分支名>
+
+注:
+gitee            https://gitee.com
+腾讯云开发者平台： https://dev.tencent.com  5人及以下团队永久免费
+阿里云代码托管：   https://code.aliyun.com

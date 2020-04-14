@@ -28,3 +28,5 @@
 3. 在本地使用git push origin推送到自己Fork出来的库【my/bootstrap】
 4. 此时【my/bootstrap】与【twbs/bootstrap】同步完成
 5. 给原作者发送PullRequest的消息
+
+注:pull request是一个request，它的目的是让别人pull你的东西.
