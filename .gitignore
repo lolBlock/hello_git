@@ -1,0 +1,9 @@
+# windows
+*.db
+*.ini
+
+# python
+*.py[cod]
+
+# my config
+ignore_test
