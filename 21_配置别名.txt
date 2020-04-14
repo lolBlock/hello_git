@@ -1,0 +1,10 @@
+git config --global yesongji.st status
+git config --global yesongji.ci commit
+git config --global yesongji.co checkout
+git config --global yesongji.br branch
+
+--global参数是全局参数，也就是这些命令在这台电脑的该用户的所有Git仓库下都有用。
+如果不加--global，那只针对当前的仓库起作用。
+
+每个仓库的Git配置文件放在该仓库目录/.git/config
+当前用户的Git配置文件放在用户主目录.gitconfig, 例如C:/Users/Administrator/.gitconfig
